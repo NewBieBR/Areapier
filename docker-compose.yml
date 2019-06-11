@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  server:
+    build: "server/"
+    container_name: "server"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./server/:/server
+  client_mobile:
+    build: "client_mobile/"
+    container_name: "client_mobile"
+    volumes:
+      - ./client_mobile/App/:/mobile
+      - ./build/:/build
+  client_web:
+    build: "client_web/"
+    container_name: "client_web"
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./client_web/:/web
+      - ./build/:/web/public/build
+    environment:
+      - PORT=8081
+    depends_on:
+      - client_mobile
+      - server
+
+volumes:
+  server:
+  App:
+  client_web:
+  build:

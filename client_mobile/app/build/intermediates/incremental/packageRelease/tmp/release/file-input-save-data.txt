@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Tue Jan 15 20:43:05 UTC 2019
+0.baseType=DIRECTORY
+0.base=/mobile/app/build/intermediates/transforms/dexMerger/release/0
+0.path=classes.dex
+0.set=DEX
+count=1

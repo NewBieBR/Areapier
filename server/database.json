@@ -1,0 +1,1145 @@
+{
+  "users": [
+    {
+      "clientId": "2e05v1zvjt5zna30",
+      "authType": "area",
+      "username": "Hung",
+      "password": "da5393677ac5db23dacc984bb75a4fd5333fa7f28b785733b5949b9b46c3f892e826af82413b6993d95c2b7faed0ae6306c54cd0797f5e8c0365bdec609cf9f4",
+      "authentifications": {},
+      "areas": [
+        {
+          "name": "Bitcoin",
+          "description": "Get bitcoin price every sunday",
+          "activated": true,
+          "action": {
+            "classeName": "cryptoManager",
+            "funcName": "cryptoPrice",
+            "parameters": {
+              "crypto": "BTC",
+              "day": "0"
+            }
+          },
+          "reaction": {
+            "classeName": "mailManager",
+            "funcName": "sendMail",
+            "parameters": {
+              "to": "Hello",
+              "subject": "Bonjour ",
+              "contentType": "text"
+            }
+          },
+          "reactions": [
+            {
+              "classeName": "mailManager",
+              "funcName": "sendMail",
+              "parameters": {
+                "to": "Hello",
+                "subject": "Bonjour ",
+                "contentType": "text"
+              }
+            }
+          ],
+          "id": "2e05v1zvjt5zogfg"
+        },
+        {
+          "name": "Recipe",
+          "activated": true,
+          "action": {
+            "classeName": "mealManager",
+            "funcName": "getMeal",
+            "parameters": {
+              "hours": "12",
+              "minutes": "30"
+            }
+          },
+          "reaction": {
+            "classeName": "mailManager",
+            "funcName": "sendMail",
+            "parameters": {
+              "to": "T",
+              "subject": "D ",
+              "contentType": "text"
+            }
+          },
+          "reactions": [
+            {
+              "classeName": "mailManager",
+              "funcName": "sendMail",
+              "parameters": {
+                "to": "T",
+                "subject": "D ",
+                "contentType": "text"
+              }
+            }
+          ],
+          "id": "2e05v1zvjt5zpfux"
+        },
+        {
+          "name": "Monday’s advice",
+          "activated": true,
+          "action": {
+            "classeName": "adviceManager",
+            "funcName": "getAdvice",
+            "parameters": {
+              "day": "1"
+            }
+          },
+          "reaction": {
+            "classeName": "mailManager",
+            "funcName": "sendMail",
+            "parameters": {
+              "to": "Bonjour ",
+              "subject": "B",
+              "contentType": "text"
+            }
+          },
+          "reactions": [
+            {
+              "classeName": "mailManager",
+              "funcName": "sendMail",
+              "parameters": {
+                "to": "Bonjour ",
+                "subject": "B",
+                "contentType": "text"
+              }
+            }
+          ],
+          "id": "2e05v1zvjt5zq39y"
+        },
+        {
+          "name": "Morning weather",
+          "activated": true,
+          "action": {
+            "classeName": "weatherManager",
+            "funcName": "currentWeather",
+            "parameters": {
+              "hour": "7",
+              "city": "Paris"
+            }
+          },
+          "reaction": {
+            "classeName": "mailManager",
+            "funcName": "sendMail",
+            "parameters": {
+              "to": "Je ",
+              "subject": "Il ",
+              "contentType": "text"
+            }
+          },
+          "reactions": [
+            {
+              "classeName": "mailManager",
+              "funcName": "sendMail",
+              "parameters": {
+                "to": "Je ",
+                "subject": "Il ",
+                "contentType": "text"
+              }
+            }
+          ],
+          "id": "2e05v1zvjt5zqv5r"
+        },
+        {
+          "name": "Cat",
+          "description": "I love cats",
+          "activated": true,
+          "action": {
+            "classeName": "catManager",
+            "funcName": "catFact",
+            "parameters": {
+              "day": "4"
+            }
+          },
+          "reaction": {
+            "classeName": "mailManager",
+            "funcName": "sendMail",
+            "parameters": {
+              "to": "B",
+              "subject": "B",
+              "contentType": "text"
+            }
+          },
+          "reactions": [
+            {
+              "classeName": "mailManager",
+              "funcName": "sendMail",
+              "parameters": {
+                "to": "B",
+                "subject": "B",
+                "contentType": "text"
+              }
+            }
+          ],
+          "id": "2e05v1zvjt5zrlwx"
+        },
+        {
+          "name": "Saturday Activity",
+          "activated": true,
+          "action": {
+            "classeName": "boredManager",
+            "funcName": "getActivity",
+            "parameters": {
+              "day": "6"
+            }
+          },
+          "reaction": {
+            "classeName": "mailManager",
+            "funcName": "sendMail",
+            "parameters": {
+              "to": "B",
+              "subject": "B",
+              "contentType": "text"
+            }
+          },
+          "reactions": [
+            {
+              "classeName": "mailManager",
+              "funcName": "sendMail",
+              "parameters": {
+                "to": "B",
+                "subject": "B",
+                "contentType": "text"
+              }
+            }
+          ],
+          "id": "2e05v1zvjt5zsif2"
+        },
+        {
+          "name": "Joke",
+          "description": "Make me laugh",
+          "activated": true,
+          "action": {
+            "classeName": "jokeManager",
+            "funcName": "getJoke",
+            "parameters": {
+              "day": "2"
+            }
+          },
+          "reaction": {
+            "classeName": "mailManager",
+            "funcName": "sendMail",
+            "parameters": {
+              "to": "B",
+              "subject": "B",
+              "contentType": "text"
+            }
+          },
+          "reactions": [
+            {
+              "classeName": "mailManager",
+              "funcName": "sendMail",
+              "parameters": {
+                "to": "B",
+                "subject": "B",
+                "contentType": "text",
+                "actionValue": {
+                  "joke": "- I dropped a pear in my car this morning.\n- You should drop another one, then you would have a pair."
+                },
+                "text": ""
+              }
+            }
+          ],
+          "id": "2e05v1zvjt5zuj95"
+        }
+      ]
+    }
+  ],
+  "services": {
+    "mail": {
+      "name": "Mail",
+      "description": "Sending of mail by our platform.",
+      "imageUrl": "https://i.imgur.com/bc33B5Z.png",
+      "colorTheme": "",
+      "classeName": "mailManager",
+      "actions": [],
+      "reactions": [
+        {
+          "funcName": "sendMail",
+          "name": "send an email",
+          "description": "Send an email (from the area 42 email address)",
+          "parameters": [
+            {
+              "name": "to",
+              "description": "Email receiver",
+              "type": "email",
+              "required": true
+            },
+            {
+              "name": "subject",
+              "description": "Email subject",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "contentType",
+              "description": "Type of content",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Your message",
+                  "value": "text"
+                },
+                {
+                  "name": "New articles (for new article action)",
+                  "value": "newArticle"
+                },
+                {
+                  "name": "New dailymotion videos (for new video action)",
+                  "value": "newVideo"
+                }
+              ],
+              "required": true
+            },
+            {
+              "name": "text",
+              "description": "Your message",
+              "type": "string",
+              "required": false
+            }
+          ]
+        }
+      ]
+    },
+    "news": {
+      "name": "News",
+      "description": "Recovery of articles.",
+      "imageUrl": "https://i.imgur.com/crG7MKZ.png",
+      "colorTheme": "",
+      "classeName": "newsManager",
+      "actions": [
+        {
+          "funcName": "newArticle",
+          "name": "New article",
+          "description": "Retrieving new articles about a topic.",
+          "parameters": [
+            {
+              "name": "subjet",
+              "description": "Subject of articles to recover",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "totalResults",
+              "description": "Number of items retrieved",
+              "type": "number"
+            },
+            {
+              "name": "articles",
+              "description": "Information on articles",
+              "type": "array"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "schedule": {
+      "name": "Schedule",
+      "description": "Planning.",
+      "imageUrl": "https://i.imgur.com/EG6wF1M.png",
+      "colorTheme": "",
+      "classeName": "scheduleManager",
+      "actions": [
+        {
+          "funcName": "daily",
+          "name": "Daily action",
+          "description": "Plan an action each day.",
+          "parameters": [
+            {
+              "name": "hour",
+              "description": "The hour to trigger the reactions",
+              "type": "number",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "Date",
+              "description": "Release date",
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "funcName": "weekly",
+          "name": "Weekly action",
+          "description": "Plan an action each week.",
+          "parameters": [
+            {
+              "name": "hour",
+              "description": "The hour to trigger the reactions",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "day",
+              "description": "The day of the week",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Sunday",
+                  "value": "0"
+                },
+                {
+                  "name": "Monday",
+                  "value": "1"
+                },
+                {
+                  "name": "Tuesday",
+                  "value": "2"
+                },
+                {
+                  "name": "Wednesday",
+                  "value": "3"
+                },
+                {
+                  "name": "Thursday",
+                  "value": "4"
+                },
+                {
+                  "name": "Friday",
+                  "value": "5"
+                },
+                {
+                  "name": "Saturday",
+                  "value": "6"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "Date",
+              "description": "Release date",
+              "type": "date"
+            }
+          ]
+        },
+        {
+          "funcName": "monthly",
+          "name": "Monthly action",
+          "description": "Schedule an action each month.",
+          "parameters": [
+            {
+              "name": "hour",
+              "description": "The hour to trigger the reactions",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "date",
+              "description": "The day of the month to trigger the reactions",
+              "type": "number",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "Date",
+              "description": "Release date",
+              "type": "date"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "dailymotion": {
+      "name": "Dailymotion",
+      "description": "Service related to the online hosting, sharing and viewing platform dailymotion.",
+      "imageUrl": "https://i.imgur.com/rXTF72m.png",
+      "colorTheme": "#00aaff",
+      "classeName": "dailymotionManager",
+      "actions": [
+        {
+          "funcName": "newVideo",
+          "name": "New video",
+          "description": "Retrieving new videos about a topic.",
+          "parameters": [
+            {
+              "name": "subjet",
+              "description": "Subject of the video to recover",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "totalResults",
+              "description": "Number of videos retrieved",
+              "type": "number"
+            },
+            {
+              "name": "videos",
+              "description": "Information about the videos",
+              "type": "array"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "weather": {
+      "name": "Weather",
+      "description": "Recovery of the weather",
+      "imageUrl": "https://i.imgur.com/pkMGUFv.png",
+      "colorTheme": "",
+      "classeName": "weatherManager",
+      "actions": [
+        {
+          "funcName": "currentWeather",
+          "name": "Current weather",
+          "description": "Recovery of the current weather.",
+          "parameters": [
+            {
+              "name": "hour",
+              "description": "The time to retrieve the weather",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "city",
+              "description": "City whose weather you want",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "weather",
+              "description": "Weather of the given city",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "funcName": "rainWeather",
+          "name": "will it rain?",
+          "description": "Warning if it rains the next day.",
+          "parameters": [
+            {
+              "name": "hour",
+              "description": "The time to retrieve the weather",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "city",
+              "description": "City whose weather you want",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "rain",
+              "description": "Weather of tomorrow",
+              "type": "bool"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "crypto": {
+      "name": "crypto",
+      "description": "Recovery of cryptocurrency data",
+      "imageUrl": "https://i.imgur.com/oyZUr1s.png",
+      "colorTheme": "",
+      "classeName": "cryptoManager",
+      "actions": [
+        {
+          "funcName": "cryptoPrice",
+          "name": "Crypto currencies",
+          "description": "Cryptocurrency prices.",
+          "parameters": [
+            {
+              "name": "crypto",
+              "description": "Crypto currency",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Bitcoin",
+                  "value": "BTC"
+                },
+                {
+                  "name": "ABBC Coin",
+                  "value": "ABBC"
+                },
+                {
+                  "name": "Linkey",
+                  "value": "LKY"
+                },
+                {
+                  "name": "Aurora",
+                  "value": "AOA"
+                }
+              ],
+              "required": true
+            },
+            {
+              "name": "day",
+              "description": "When do you want to receive them?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Sunday",
+                  "value": "0"
+                },
+                {
+                  "name": "Monday",
+                  "value": "1"
+                },
+                {
+                  "name": "Tuesday",
+                  "value": "2"
+                },
+                {
+                  "name": "Wednesday",
+                  "value": "3"
+                },
+                {
+                  "name": "Thrusday",
+                  "value": "4"
+                },
+                {
+                  "name": "Friday",
+                  "value": "5"
+                },
+                {
+                  "name": "Saturday",
+                  "value": "6"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "crypto_price",
+              "description": "Price of the selected cryptocurrency",
+              "type": "string"
+            },
+            {
+              "name": "crypto_name",
+              "description": "Name of the selected cryptocurrency",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "cat": {
+      "name": "Cat",
+      "description": "For cat lovers <3",
+      "imageUrl": "https://i.imgur.com/cz2rp5I.png",
+      "colorTheme": "",
+      "classeName": "catManager",
+      "actions": [
+        {
+          "funcName": "catFact",
+          "name": "Cat's facts",
+          "description": "Cat's facts.",
+          "parameters": [
+            {
+              "name": "day",
+              "description": "When do you want to receive them?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Sunday",
+                  "value": "0"
+                },
+                {
+                  "name": "Monday",
+                  "value": "1"
+                },
+                {
+                  "name": "Tuesday",
+                  "value": "2"
+                },
+                {
+                  "name": "Wednesday",
+                  "value": "3"
+                },
+                {
+                  "name": "Thrusday",
+                  "value": "4"
+                },
+                {
+                  "name": "Friday",
+                  "value": "5"
+                },
+                {
+                  "name": "Saturday",
+                  "value": "6"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "fact",
+              "description": "Cat's fact",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "advice": {
+      "name": "Advice",
+      "description": "Advice for you <3",
+      "imageUrl": "https://i.imgur.com/nOmKH9C.png",
+      "colorTheme": "",
+      "classeName": "adviceManager",
+      "actions": [
+        {
+          "funcName": "getAdvice",
+          "name": "Advice",
+          "description": "Get an advice every week",
+          "parameters": [
+            {
+              "name": "day",
+              "description": "When do you want to receive them?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Sunday",
+                  "value": "0"
+                },
+                {
+                  "name": "Monday",
+                  "value": "1"
+                },
+                {
+                  "name": "Tuesday",
+                  "value": "2"
+                },
+                {
+                  "name": "Wednesday",
+                  "value": "3"
+                },
+                {
+                  "name": "Thrusday",
+                  "value": "4"
+                },
+                {
+                  "name": "Friday",
+                  "value": "5"
+                },
+                {
+                  "name": "Saturday",
+                  "value": "6"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "advice",
+              "description": "Advice",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "funcName": "getQuote",
+          "name": "Quote",
+          "description": "Get an inspirational quote for you soul",
+          "parameters": [
+            {
+              "name": "day",
+              "description": "When do you want to receive them?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Sunday",
+                  "value": "0"
+                },
+                {
+                  "name": "Monday",
+                  "value": "1"
+                },
+                {
+                  "name": "Tuesday",
+                  "value": "2"
+                },
+                {
+                  "name": "Wednesday",
+                  "value": "3"
+                },
+                {
+                  "name": "Thrusday",
+                  "value": "4"
+                },
+                {
+                  "name": "Friday",
+                  "value": "5"
+                },
+                {
+                  "name": "Saturday",
+                  "value": "6"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "quote",
+              "description": "Quote",
+              "type": "string"
+            },
+            {
+              "name": "quote_author",
+              "description": "Quote's author",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "funcName": "getFact",
+          "name": "Fact",
+          "description": "Get interessting facts",
+          "parameters": [
+            {
+              "name": "type",
+              "description": "What kind of fact do you want to receive?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "On a year",
+                  "value": "year"
+                },
+                {
+                  "name": "On a number",
+                  "value": "math"
+                },
+                {
+                  "name": "On a date",
+                  "value": "date"
+                }
+              ],
+              "required": true
+            },
+            {
+              "name": "day",
+              "description": "When do you want to receive them?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Sunday",
+                  "value": "0"
+                },
+                {
+                  "name": "Monday",
+                  "value": "1"
+                },
+                {
+                  "name": "Tuesday",
+                  "value": "2"
+                },
+                {
+                  "name": "Wednesday",
+                  "value": "3"
+                },
+                {
+                  "name": "Thrusday",
+                  "value": "4"
+                },
+                {
+                  "name": "Friday",
+                  "value": "5"
+                },
+                {
+                  "name": "Saturday",
+                  "value": "6"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "fact",
+              "description": "Fact",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "joke": {
+      "name": "Joke",
+      "description": "Joke for you <3",
+      "imageUrl": "https://i.imgur.com/hg8EBP6.png",
+      "colorTheme": "",
+      "classeName": "jokeManager",
+      "actions": [
+        {
+          "funcName": "getJoke",
+          "name": "Joke",
+          "description": "Get a joke every week",
+          "parameters": [
+            {
+              "name": "day",
+              "description": "When do you want to receive them?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Sunday",
+                  "value": "0"
+                },
+                {
+                  "name": "Monday",
+                  "value": "1"
+                },
+                {
+                  "name": "Tuesday",
+                  "value": "2"
+                },
+                {
+                  "name": "Wednesday",
+                  "value": "3"
+                },
+                {
+                  "name": "Thrusday",
+                  "value": "4"
+                },
+                {
+                  "name": "Friday",
+                  "value": "5"
+                },
+                {
+                  "name": "Saturday",
+                  "value": "6"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "joke",
+              "description": "Joke",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "meal": {
+      "name": "Meal recipe",
+      "description": "A new recipe every day",
+      "imageUrl": "https://i.imgur.com/RxMaELP.png",
+      "colorTheme": "#eeeeee",
+      "classeName": "mealManager",
+      "actions": [
+        {
+          "funcName": "getMeal",
+          "name": "Meal",
+          "description": "Get a new recipe every day",
+          "parameters": [
+            {
+              "name": "hours",
+              "description": "Which hour do you want your recipe ?",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "minutes",
+              "description": "Which minute precisely ?",
+              "type": "number",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "meal",
+              "description": "Recipe",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "bored": {
+      "name": "Bored",
+      "description": "A random activity to do every week",
+      "imageUrl": "https://i.imgur.com/ib0oGWh.png",
+      "colorTheme": "",
+      "classeName": "boredManager",
+      "actions": [
+        {
+          "funcName": "getActivity",
+          "name": "Activity",
+          "description": "Activity.",
+          "parameters": [
+            {
+              "name": "day",
+              "description": "When do you want to receive them?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "Sunday",
+                  "value": "0"
+                },
+                {
+                  "name": "Monday",
+                  "value": "1"
+                },
+                {
+                  "name": "Tuesday",
+                  "value": "2"
+                },
+                {
+                  "name": "Wednesday",
+                  "value": "3"
+                },
+                {
+                  "name": "Thrusday",
+                  "value": "4"
+                },
+                {
+                  "name": "Friday",
+                  "value": "5"
+                },
+                {
+                  "name": "Saturday",
+                  "value": "6"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "activity",
+              "description": "Activity",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    },
+    "intraEpitech": {
+      "name": "Intranet Epitech",
+      "description": "Epitech intranet, computer school. (https://intra.epitech.eu/)",
+      "imageUrl": "https://i.imgur.com/hVb5wuE.png",
+      "colorTheme": "",
+      "classeName": "intraEpitechManager",
+      "actions": [
+        {
+          "funcName": "newMessage",
+          "name": "New message",
+          "description": "New messages on intra Epitech",
+          "parameters": [
+            {
+              "name": "autologinLink",
+              "description": "Autologin link to connect to your account (to recover on https://intra.epitech.eu/admin/autolog)",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "nbMessages",
+              "description": "Number of new messages",
+              "type": "number"
+            },
+            {
+              "name": "messages",
+              "description": "Information about new messages",
+              "type": "array"
+            }
+          ]
+        },
+        {
+          "funcName": "newMissed",
+          "name": "New absence",
+          "description": "New absences on intra Epitech",
+          "parameters": [
+            {
+              "name": "autologinLink",
+              "description": "Autologin link to connect to your account (to recover on https://intra.epitech.eu/admin/autolog)",
+              "type": "string",
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "nbMissed",
+              "description": "Number of new absences",
+              "type": "number"
+            },
+            {
+              "name": "missed",
+              "description": "Information on new absences",
+              "type": "array"
+            }
+          ]
+        },
+        {
+          "funcName": "endProject",
+          "name": "End of project",
+          "description": "End of project Epitech close",
+          "parameters": [
+            {
+              "name": "autologinLink",
+              "description": "Autologin link to connect to your account (to recover on https://intra.epitech.eu/admin/autolog)",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "timeValue",
+              "description": "Number of hours or days when the action is triggered before the end of the project",
+              "type": "number",
+              "required": true
+            },
+            {
+              "name": "timeKey",
+              "description": "in hours or days?",
+              "type": "list",
+              "default": [
+                {
+                  "name": "in days",
+                  "value": "days"
+                },
+                {
+                  "name": "in hours",
+                  "value": "hours"
+                }
+              ],
+              "required": true
+            }
+          ],
+          "returnValue": [
+            {
+              "name": "nbProject",
+              "description": "Number of projects soon to be completed",
+              "type": "number"
+            },
+            {
+              "name": "projects",
+              "description": "Information about the projects that will be completed soon",
+              "type": "array"
+            }
+          ]
+        }
+      ],
+      "reactions": []
+    }
+  }
+}

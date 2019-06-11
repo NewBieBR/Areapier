@@ -1,0 +1,77 @@
+import React from "react";
+import { Platform, StatusBar, StyleSheet, View } from "react-native";
+import { AppLoading, Asset, Font, Icon } from "expo";
+import AppNavigator from "./navigation/AppNavigator";
+import LoginScreen from "./screens/LoginScreen";
+import { Root } from "native-base";
+import Global from "./Global";
+
+export default class App extends React.Component {
+  state = {
+    isLoadingComplete: false
+  };
+
+  onLoggedIn(userToken) {
+    Global.userToken = userToken;
+    this.forceUpdate();
+  }
+
+  render() {
+    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen)
+      return this.renderAppLoading();
+    else if (!Global.userToken)
+      return (
+        <Root>
+          <LoginScreen onDone={this.onLoggedIn.bind(this)} />
+        </Root>
+      );
+    else {
+      return (
+        <Root>
+          <View style={styles.container}>
+            {Platform.OS === "ios" && <StatusBar barStyle="default" />}
+            <AppNavigator />
+          </View>
+        </Root>
+      );
+    }
+  }
+
+  renderAppLoading() {
+    return (
+      <AppLoading
+        startAsync={this._loadResourcesAsync}
+        onError={this._handleLoadingError}
+        onFinish={this._handleFinishLoading}
+      />
+    );
+  }
+
+  _loadResourcesAsync = async () => {
+    // return Promise.all([
+    //   Asset.loadAsync([
+    //     require("./assets/images/robot-dev.png"),
+    //     require("./assets/images/robot-prod.png")
+    //   ]),
+    //   Font.loadAsync({
+    //     ...Icon.Ionicons.font,
+    //     "space-mono": require("./assets/fonts/SpaceMono-Regular.ttf")
+    //   })
+    // ]);
+  };
+
+  _handleLoadingError = error => {
+    console.warn(error);
+  };
+
+  _handleFinishLoading = () => {
+    this.setState({ isLoadingComplete: true });
+  };
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff"
+  }
+});

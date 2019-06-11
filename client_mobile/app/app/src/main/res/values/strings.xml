@@ -1,0 +1,85 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">area</string>
+
+    <!-- String of all routes -->
+    <string-array name="routes_post">
+        <item>/users</item>
+        <item>/users/connections</item>
+        <item>/users/authentifications</item>
+        <item>/users/areas</item>
+    </string-array>
+
+    <string-array name="routes_get">
+        <item>/services</item>
+        <item>/users/authentifications</item>
+        <item>/users/areas</item>
+        <item>/users</item>
+    </string-array>
+
+    <string-array name="routes_put">
+        <item>/users/areas</item>
+    </string-array>
+
+    <string-array name="routes_delete">
+        <item>/users/areas</item>
+    </string-array>
+
+    <!-- Strings Welcome -->
+    <string name="txt_configure_ip">Configure server IP :</string>
+
+    <!-- Strings related to Welcolm Activity -->
+    <string name="txt_welcome">AREA 42</string>
+    <string name="txt_sign_up">Subscribe to Area42</string>
+    <string name="txt_sign_in">Log in to Area42</string>
+
+    <!-- Strings related to FaceBook SDK -->
+    <string name="facebook_app_id">541183929726795</string>
+    <string name="fb_login_protocol_scheme">fb541183929726795</string>
+    <string name="com_facebook_loginview_log_out_button">Log Out</string>
+    <string name="com_facebook_loginview_log_in_button">Facebook</string>
+
+    <!-- Strings related to Google SDK -->
+    <string name="google_server_client_id">540282318330-j591lt28212ngke31ggrei70j2raq89p.apps.googleusercontent.com</string>
+
+    <!-- Strings related to Twitter SDK -->
+    <string name="twitter_consumer_key">x5FkwUaO9AiJrVRAGquHcppaW</string>
+    <string name="twitter_consumer_secret">4M6kdYz84vfIPtivxN2hFvJ3Brh8sNMhkvEmZlDU5R6HwAsTQl</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY" tools:ignore="ExtraTranslation">x5FkwUaO9AiJrVRAGquHcppaW</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET" tools:ignore="ExtraTranslation">4M6kdYz84vfIPtivxN2hFvJ3Brh8sNMhkvEmZlDU5R6HwAsTQl</string>
+
+    <!-- Strings related to Register Form -->
+    <string name="title_activity_register_form_area42">Register Form</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_password_verification">Password (Verification)</string>
+    <string name="action_register">Sign Up</string>
+    <string name="action_sign_in_short">Sign in</string>
+
+    <string name="error_invalid_username">This username is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_invalid_password_verif">You must have the same password for this field</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+    <string name="title_activity_login_area42">Log In</string>
+
+    <!-- Strings related to login -->
+    <string name="title_activity_Log_in_area42">Log In</string>
+    <string name="prompt_email">Email</string>
+    <string name="action_log_in">Log In</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+
+    <string name="cancel_button">ComeBack</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Profile Fragment -->
+    <string name="profile_title">Profile</string>
+    <string name="disconnect_title">Disconnect</string>
+    <string name="textview">TextView</string>
+
+    <!-- Listing Action -->
+    <string name="title_listing_action">Actions</string>
+</resources>

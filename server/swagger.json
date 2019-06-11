@@ -1,0 +1,600 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API AREA",
+    "description": "API for Area project by AREA 42."
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "localhost:8080",
+  "tags": [
+    {
+      "name": "services"
+    },
+    {
+      "name": "users"
+    }
+  ],
+  "paths": {
+    "/services": {
+      "get": {
+        "tags": [
+          "services"
+        ],
+        "summary": "Gets services availables",
+        "description": "Returns an object containing all services.",
+        "responses": {
+          "200": {
+            "description": "A list of Services",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "services": {
+                  "type": "object",
+                  "properties": {
+                    "servicename": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "imageUrl": {
+                          "type": "string"
+                        },
+                        "colortheme": {
+                          "type": "string"
+                        },
+                        "classeName": {
+                          "type": "string"
+                        },
+                        "actions": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "funcName": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "parameters": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object"
+                                }
+                              },
+                              "returnValue": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "reactions": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "funcName": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "parameters": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Create new user",
+        "description": "Create a new user in the database.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "required": true,
+            "description": "The user to create (authType to \"area\" for regular creation with username and password OR \"facebook\", \"twitter\" and \"google\" for creation with extern account with oauthId and token).",
+            "schema": {
+              "type": "object",
+              "required": [
+                "authType"
+              ],
+              "properties": {
+                "username": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "authType": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                },
+                "oauthId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New user created"
+          },
+          "409": {
+            "description": "User already exists"
+          }
+        }
+      }
+    },
+    "/users/connections": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Connection of user",
+        "description": "Connection of a user to the area server.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "required": true,
+            "name": "user",
+            "description": "The user to connect (authType to \"area\" for regular connection or use token and oauthId for connection with extern account).",
+            "schema": {
+              "type": "object",
+              "required": [
+                "authType"
+              ],
+              "properties": {
+                "username": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "authType": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                },
+                "oauthId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User connected",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string"
+                },
+                "expirationDate": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User doesn't exist OR Invalid username or password"
+          }
+        }
+      }
+    },
+    "/users/authentifications": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Gets user's authentifications",
+        "description": "Returns an object containing all authentifications of the user.",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "token given at the user connection.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "authentifications": {
+                  "type": "object",
+                  "properties": {
+                    "oauthId": {
+                      "type": "object",
+                      "properties": {
+                        "authType": {
+                          "type": "string"
+                        },
+                        "oauthId": {
+                          "type": "string"
+                        },
+                        "token": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token OR Invalid ClientID"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Add a new authentification",
+        "description": "Add a new authentification for this user.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "token given at the user connection.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "authentification data",
+            "required": true,
+            "description": "The authentication data to add at the user.",
+            "schema": {
+              "type": "object",
+              "required": [
+                "token",
+                "oauthId",
+                "authType"
+              ],
+              "properties": {
+                "authType": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                },
+                "oauthId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authentification success"
+          },
+          "401": {
+            "description": "Invalid Token OR Invalid ClientID"
+          }
+        }
+      }
+    },
+    "/users/areas": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Gets areas of the user",
+        "description": "Returns an object containing all areas.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "token given at the user connection.",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "area": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "activated": {
+                        "type": "boolean"
+                      },
+                      "action": {
+                        "type": "object",
+                        "properties": {
+                          "classeName": {
+                            "type": "string"
+                          },
+                          "funcName": {
+                            "type": "string"
+                          },
+                          "parameters": {
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "reactions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "classeName": {
+                              "type": "string"
+                            },
+                            "funcName": {
+                              "type": "string"
+                            },
+                            "parameters": {
+                              "type": "object"
+                            }
+                          }
+                        }
+                      },
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token OR Invalid ClientID"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Add a new area",
+        "description": "Add a new area for this user.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "token given at the user connection.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "required": true,
+            "name": "area",
+            "description": "The description of the new area to create for the user.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "area": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "activated": {
+                      "type": "boolean"
+                    },
+                    "action": {
+                      "type": "object",
+                      "properties": {
+                        "classeName": {
+                          "type": "string"
+                        },
+                        "funcName": {
+                          "type": "string"
+                        },
+                        "parameters": {
+                          "type": "object"
+                        }
+                      }
+                    },
+                    "reactions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "classeName": {
+                            "type": "string"
+                          },
+                          "funcName": {
+                            "type": "string"
+                          },
+                          "parameters": {
+                            "type": "object"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Id of the new area",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Token OR Invalid ClientID"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Modify a area",
+        "description": "Modify area for this user.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "token given at the user connection.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "required": true,
+            "name": "area",
+            "description": "The id of the area to modify.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "activated": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Done"
+          },
+          "401": {
+            "description": "Invalid Token OR Invalid ClientID"
+          },
+          "403": {
+            "description": "Area doesn't exist"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Delete a area",
+        "description": "Delete area for this user.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "token given at the user connection.",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "required": true,
+            "name": "area",
+            "description": "The id of the area to delete.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Done"
+          },
+          "401": {
+            "description": "Invalid Token OR Invalid ClientID"
+          },
+          "403": {
+            "description": "Area doesn't exist"
+          }
+        }
+      }
+    }
+  }
+}
